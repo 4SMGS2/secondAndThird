@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<body>
+		<%	
+			users = XQuery('for $elem in collaborators return $elem');
+
+			users = ArrayDirect(users);
+
+			users = tools.object_to_text(users, 'json')
+		%>
+		<%= users%>
+	</body>
+</html>
